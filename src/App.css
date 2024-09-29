@@ -1,0 +1,235 @@
+/*body {*/
+/*  width: 100%;*/
+/*  * {*/
+/*    !*width: 100%;*!*/
+/*    font-size: 14pt;*/
+/*    display: flex;*/
+/*    !*align-content: center;*!*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    flex-direction: column;*/
+/*    gap: 1em;*/
+/*  }*/
+/*}*/
+/*form {*/
+/*  width: 70%;*/
+/*  display: flex;*/
+/*  font-size: 18pt;*/
+/*  flex-direction: column;*/
+/*  justify-content: right;*/
+/*  gap: 0.2em;*/
+/*  * {*/
+/*    border-radius: 2rem;*/
+/*  }*/
+
+/*  input {*/
+/*    min-width: 60%;*/
+/*    padding: 0.5rem;*/
+/*    font-size: 14pt;*/
+/*  }*/
+
+/*  button {*/
+/*    min-width: 60%;*/
+/*    font-size: 14pt;*/
+/*  }*/
+
+/*  .errors {*/
+/*    font-size: 14pt;*/
+/*    color: red;*/
+/*  }*/
+/*}*/
+
+
+/*.filterChoice {*/
+/*  * {*/
+/*    gap: 0.2rem;*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    font-size: 14pt;*/
+/*    flex-direction: row;*/
+/*  }*/
+/*}*/
+
+/*.todosDiv{*/
+/*  width: 100%;*/
+/*}*/
+
+/*.todos {*/
+/*  gap: 0.2rem;*/
+/*  width: 70%;*/
+/*}*/
+
+/*.todo {*/
+/*  height: 5rem;*/
+/*  width: 100%;*/
+/*  justify-content: space-between;*/
+/*  padding: 0.5rem;*/
+/*  flex-direction: row;*/
+/*  border-radius: 2em;*/
+/*  background-color: #edeaea;*/
+/*  !*word-wrap: break-word;*!*/
+/*  !*overflow-wrap: break-word;*!*/
+/*  max-width: 100%;*/
+
+/*  button {*/
+/*    border: 0;*/
+/*    background:  #edeaea;*/
+/*  }*/
+
+/*  .info {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    gap: 0;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    align-content: center;*/
+/*    !*height: 1rem;*!*/
+/*    !*gap: 0.1rem;*!*/
+/*  }*/
+
+/*  img {*/
+/*    height: 2.5rem;*/
+/*    width: 2.5rem;*/
+/*  }*/
+/*}*/
+
+body {
+  font-size: 14pt;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.todoAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.task-input {
+  font-size: 14pt;
+  border-radius: 1.5rem;
+  padding: 0.4rem;
+  border-color: black;
+  width: 100%;
+  outline: none;
+}
+
+.errors {
+  color: red;
+}
+
+.button-add {
+  font-size: 14pt;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+  background-color: #bcb9b9;
+  border: none;
+  cursor: pointer;
+  min-width: 5rem;
+}
+
+.filter {
+  margin-bottom: 20px;
+}
+
+.todosDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.todo {
+  min-height: 5.2rem;
+  min-width: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.1rem;
+  border-radius: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: #a0a0a0;
+
+  button {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    background: #a0a0a0;
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  * {
+    background: #a0a0a0;
+    font-size: 14pt;
+  }
+}
+
+.info, .editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.done {
+  background: #61ff63;
+
+  h3,p,button, div, img, input{
+    background: #61ff63
+  }
+
+  input {
+    accent-color: #029f04;
+  }
+  *{
+    background: #61ff63;
+  }
+}
+
+h3 {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+p {
+  margin: 0.5rem 0;
+  overflow-wrap: break-word;
+}
+
+.deleteButton {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  cursor: pointer;
+  background: #a0a0a0;
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
