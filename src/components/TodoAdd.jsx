@@ -11,12 +11,12 @@ export class TodoAdd extends React.Component {
 
 
     handleTodoAdd = (e) => {
-        e.preventDefault();
         const errors = validateTitle(this.state.title);
         if (errors.length) {
             this.setState({
                 errors: errors
             })
+            e.preventDefault();
         } else {
             this.props.onTodoAdd(this.state.title, this.state.descr)
             this.setState({
@@ -25,7 +25,6 @@ export class TodoAdd extends React.Component {
                 errors: ""
             })
         }
-        e.target.reset()
     }
 
     render() {
