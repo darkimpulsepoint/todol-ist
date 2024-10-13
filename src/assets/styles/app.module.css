@@ -1,0 +1,62 @@
+body {
+  font-size: 14pt;
+  gap: 4%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  display: flex;
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  justify-content: flex-start;
+  gap: 3%;
+}
+
+.container__left {
+  display: flex;
+  align-items: flex-start;
+  /*justify-content: center;*/
+  margin: 1%;
+}
+
+.main-container {
+
+}
+
+.filter {
+  margin-bottom: 20px;
+}
+
+.filterChoice {
+  display: flex;
+  flex-direction: column;
+  /*position: sticky;*/
+  gap: 0.5rem;
+}
+
+.filter-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.todosDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 1rem;
+  width: 60rem;
+  text-align: center;
+}
+
+

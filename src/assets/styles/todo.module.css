@@ -1,0 +1,80 @@
+* {
+    font-size: 14pt;
+}
+
+.todo {
+    min-height: 5.2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0.4rem;
+    border-radius: 1.5rem;
+    overflow-wrap: break-word;
+    background: #a0a0a0;
+
+    * {
+        background: #a0a0a0;
+        font-size: 14pt;
+    }
+}
+
+.actionButton {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    background: #a0a0a0;
+}
+
+.imgInBtn {
+    width: 2rem;
+    height: 2rem;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    word-wrap: break-word;
+
+    h3, p {
+        word-break: break-all;
+        overflow-wrap: break-word;
+    }
+}
+
+.done {
+    background: #61ff63;
+
+    h3,p,button, div, img, input{
+        background: #61ff63
+    }
+
+    input {
+        accent-color: #029f04;
+    }
+    *{
+        background: #61ff63;
+    }
+}
+
+.infoText {
+    word-break: break-all;
+}
+
+h3 {
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+p {
+    margin: 0.5rem 0;
+    overflow-wrap: break-word;
+}

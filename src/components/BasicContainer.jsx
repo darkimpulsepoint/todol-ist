@@ -2,8 +2,11 @@ import React from "react";
 import TodoDB from "../db/TodoDB.js";
 import {TodoAdd} from "./TodoAdd.jsx";
 import {Todos} from "./Todos.jsx";
-import {allFilters, getFilteredArr} from "../filter/filters.js";
+import {getFilteredArr} from "../filter/filters.js";
 import FilterChoice from "./FilterChoice.jsx";
+import TodoListService from "../utils/TodoListService.js";
+import styles from "../assets/styles/app.module.css"
+import {createRandTodo} from "../utils/createRandTodo.js";
 
 
 export class BasicContainer extends React.Component {
@@ -22,22 +25,30 @@ export class BasicContainer extends React.Component {
 
     render() {
         return (
-            <div className={"container"}>
-                <TodoAdd onTodoAdd={this.#handleTodoAdd}/>
-                <FilterChoice
-                    onAddFilter={this.#handleAddFilter}
-                    onRemoveFilter={this.#handleRemoveFilter}
-                    allFilters={Object.values(allFilters)}
-                />
-                <Todos todos={getFilteredArr(
-                    this.state.todos,
-                    Object.values(this.state.filters)
-                ).sort((a, b) => a.done - b.done)
-                }
-                       onCheck={this.#handleCheck}
-                       onTodoDelete={this.#handleTodoDelete}
-                       onUpdateTodo={this.#handeleUpdateTodo}
-                />
+            <div className={styles.container}>
+                <div className={styles.container__left}>
+                    <FilterChoice
+                        onAddFilter={this.#handleAddFilter}
+                        onRemoveFilter={this.#handleRemoveFilter}
+                        hashtags={TodoListService.uniqueHashTagsOptions(TodoDB.getAll())}
+                        severities={TodoListService.uniqueSeveritiesOptions(TodoDB.getAll())}
+                    />
+                </div>
+                <div className={styles.mainContainer}>
+                    <TodoAdd
+                        onTodoAdd={this.#handleTodoAdd}
+                        onRemoveAll={this.#handleRemoveAllTodos}
+                        onGen1000Todos={this.#handleGen1000Todos}/>
+                    <Todos todos={getFilteredArr(
+                        this.state.todos,
+                        Object.values(this.state.filters)
+                    ).sort((a, b) => a.done - b.done)
+                    }
+                           onCheck={this.#handleCheck}
+                           onTodoDelete={this.#handleTodoDelete}
+                           onUpdateTodo={this.#handeleUpdateTodo}
+                    />
+                </div>
             </div>
         )
     }
@@ -49,11 +60,11 @@ export class BasicContainer extends React.Component {
         this.updateTodosList()
     }
 
-    #handleAddFilter = name => {
+    #handleAddFilter = (name, func) => {
         const newFilters = {
             ...this.state.filters,
         }
-        newFilters[name] = allFilters[name];
+        newFilters[name] = func;
 
         this.setState({
             filters: newFilters
@@ -76,13 +87,27 @@ export class BasicContainer extends React.Component {
         this.updateTodosList()
     }
 
-    #handleTodoAdd = (title, descr) => {
-        TodoDB.create(title, descr);
+    #handleTodoAdd = (title, descr, severity) => {
+        TodoDB.create(title, descr, severity);
         this.updateTodosList();
     }
 
     #handeleUpdateTodo = todo => {
         TodoDB.update(todo)
+        this.updateTodosList()
+    }
+
+    #handleRemoveAllTodos = () => {
+        TodoDB.removeAll()
+        this.updateTodosList()
+    }
+
+    #handleGen1000Todos = () => {
+        Array(1000).fill(0)
+            .forEach(el => {
+                    createRandTodo()
+                }
+            )
         this.updateTodosList()
     }
 }

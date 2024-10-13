@@ -1,0 +1,16 @@
+.todos {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 1rem;
+  width: 90%;
+  text-align: center;
+}
+
+.todosDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+}
